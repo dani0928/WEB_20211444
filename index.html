@@ -15,6 +15,7 @@
     <script type="text/javascript" src="js/data_type.js" defer></script>
     <script type="text/javascript" src="js/pop_up.js" defer></script>
     <script type="text/javascript" src="js/hover.js" defer></script>
+    <script type="text/javascript" src="js/array_test.js" defer></script>
 </head>
 
 <body onload ="pop_up();">
@@ -74,7 +75,7 @@
                 <img src="img/googlelogo_color_big.png" class="img-fluid" alt="구글이미지" onmouseover="over(this)" onmouseout="out(this)"></a>
         </div>
         <br>
-        <form action="https://www.google.co.kr/search" method="GET" target="_blank">
+        <form id = "form_main"action="https://www.google.co.kr/search" method="GET" target="_blank" onsubmit="return false">
             <div class="d-flex justify-content-center">
                 <mx-auto>
                     <input name="query" type="text" class="form-control-lg" placeholder="검색어 입력" aria-label="search" aria-describedby="search_btn" id="search_txt">
@@ -93,7 +94,8 @@
             <div class="w-auto p-3" style="background-color: #;">
                 <!--<table class="table table-striped table-bordered table-hover">-->
                 <table class="table table-dark table-hover">
-                    <caption align="top">인기검색어 : <p id="search_message"></p>
+                    <caption align="top">현재검색어 : 
+                        <p id="search_message"></p>
                     </caption>
                     <tbody class="table-group-divider">
                         <tr bgcolor="yellow">
