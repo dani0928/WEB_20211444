@@ -16,11 +16,11 @@
     <script type="text/javascript" src="js/hover.js" defer></script>
     <script type="text/javascript" src="js/array_test.js" defer></script>
     <script type="text/javascript" src="../js/login.js" defer></script>
+    <script type="text/javascript" src="../js/Timer.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script> 
-
 </head>
 
-<body onload="get_id();">
+<body onload="get_id(); startTimer()">
     <title>구글 사이트 예제+Bootstrap demo</title>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
@@ -61,15 +61,11 @@
                     <li class="nav-item">
                         <button class="btn btn-outline-success" type="submit" onclick="logout()">로그아웃</button>
                     </li>
+                    <li class="nav-item"><button class="btn btn-outline-success"><div id="myTimer" class="clock"></div></button>
                 </ul>
             </div>
         </div>
     </nav>
-    <p style="text-align:left;">
-        <font size="3em" color="blue">
-            문서의 본문 텍스트, 이미지 테이블, 자바스크립트 코드, 동영상등
-        </font>
-    </p>
     <br>
     <!br은 줄 바꿈입니다.>
         <hr>
@@ -140,12 +136,6 @@
                     <i class="bi bi-instagram" style="color: #ac2bac; font-size: 2rem;"></i>
                 </div>
             </footer>
-
-            <p style="text-align:right;">
-                <font size="3em" color="red">
-                    문서의 본문 텍스트, 이미지 테이블, 자바스크립트 코드, 동영상등
-                </font>
-            </p>
 </body>
 
 </html>
