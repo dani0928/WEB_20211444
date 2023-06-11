@@ -42,18 +42,37 @@ function login(){ // 로그인
     if(id.value.length === 0 || password.value.length === 0){
         alert("아이디와 비밀번호를 모두 입력해주세요.");
     }else{
+        if(login_check()){
         session_set(); // 세션 생성
         form.submit();
+        login_count(); // 로그인 횟수 체크   
+        }
     }
-}
-
-
-function login_check(){
-    
 }
 function logout(){
     session_del(); // 세션 삭제
+    logout_count(); 
     location.href='../index.html';
+}
+function login_check(){
+    let id = document.querySelector("#floatingInput");
+    let password = document.querySelector("#floatingPassword");
+    
+    let reg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,15}$/;
+    let regex = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
+    if(regex.test(id.value)){
+    	if(reg.test(password.value)){
+            return true;
+        }
+        else{
+            alert("영문 숫자 특수기호 조합 8자리 이상으로 비밀번호를 입력해주세요.");
+            return false;
+            }
+    }
+    else{
+        alert("@example.com 이메일 주소를 포함해서 입력해주세요");
+        return false;
+        }
 }
 function get_id(){
     if(true){
@@ -76,5 +95,25 @@ function get_id(){
 }; // 함수 끝
 alert(getParameters('id') + '님 반갑습니다아아!'); // 메시지 창 출력
 	}
+}
+
+function login_count() { // 로그인 횟수 체크
+  let cnt = getCookie("login_cnt");
+  if(cnt == "") {
+    setCookie("login_cnt", 1, 1);
+  }
+  else {
+    setCookie("login_cnt", Number(cnt)+1, 1);
+  }
+}
+
+function logout_count() { // 로그아웃 횟수 체크
+  let cnt = getCookie("logout_cnt");
+  if(cnt == "") {
+    setCookie("logout_cnt", 1, 1);
+  }
+  else {
+    setCookie("logout_cnt", Number(cnt)+1, 1);
+  }
 }
 

@@ -11,7 +11,8 @@ function startTimer() {
     timerElement.textContent = `${minutes < 10 ? '0' + minutes : minutes}:${seconds < 10 ? '0' + seconds : seconds}`;
 
     if (timeLeft === 0) {
-      clearInterval(timer);
+      alert('5분이 지나 로그아웃 되었습니다.');
+        clearInterval(timer);
       logout();
     } else {
       timeLeft--;
@@ -21,8 +22,8 @@ function startTimer() {
 
 // 페이지 디자인에 맞게 로그아웃 처리 로직을 구현해 주세요.
 function logout() {
-  alert('5분이 지나 로그아웃 되었습니다. 로그인 페이지로 이동합니다.');
-  location.href = 'login.html';
+        alert('메인 페이지로 이동합니다.');
+  location.href = 'index.html';
 };
 
 startTimer();
