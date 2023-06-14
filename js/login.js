@@ -22,7 +22,7 @@ function init(){ // 로그인 폼에 쿠키에서 가져온 아이디 입력
 }
 
 function login(){ // 로그인
-    let form = document.querySelector("#form_main");
+    let form = document.querySelector("#form_main"); 	
     let id = document.querySelector("#floatingInput");
     let password = document.querySelector("#floatingPassword");
     let check = document.querySelector("#idSaveCheck");
@@ -41,8 +41,7 @@ function login(){ // 로그인
     
     if(id.value.length === 0 || password.value.length === 0){
         alert("아이디와 비밀번호를 모두 입력해주세요.");
-    }
-    else{
+    }else{
         if(login_check()){
         session_set(); // 세션 생성
         form.submit();
